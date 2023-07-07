@@ -1,4 +1,7 @@
 
+let {Tree} =require('./Tree')
+let root = Tree();
+
 function tree_travelsal_inorder(node) {
 
     if (node == null) return;

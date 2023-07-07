@@ -1,23 +1,12 @@
-let {createQueue} = require('../queue/Queue')
 
-function print_level_order(node) {
-    let queue = createQueue();
-    queue.push(node);
-
-    while (queue.data.length > 0) {
-        let pop_node = queue.pop();
-        
-        if (pop_node == null) return;
-
-        console.log(pop_node.data);
-        queue.push(pop_node.left);
-        queue.push(pop_node.right);
-    }
-
-   
+/**
+ root Node {
+  data: 10,
+  left: Node { data: 5, left: null, right: null },
+  right: Node { data: 5, left: null, right: null }
 }
-
-function create_tree() {
+ */
+function Tree() {
 
     class Node {
         constructor(data) {
@@ -40,12 +29,12 @@ function create_tree() {
     root.left.left.left = new Node(100);
     
     return root
+    
 }
 
 
-let root = create_tree();
-print_level_order(root);
-
-
+module.exports = {
+    Tree
+}
 
 
