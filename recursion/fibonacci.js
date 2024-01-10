@@ -13,5 +13,5 @@ function fibonacci(n) {
 }
 
 
-let result = fibonacci(4);
+let result = fibonacci(38);
 console.log("result :" , result)
