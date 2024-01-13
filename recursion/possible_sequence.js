@@ -11,7 +11,7 @@ function possible_sequence(str, i, current) {
 
 }
 
-possible_sequence("abc", 0, "");
+// possible_sequence("abc", 0, "");
 
 function array_sequence(arr, i, ds ,size) {
     
@@ -28,4 +28,53 @@ function array_sequence(arr, i, ds ,size) {
 
 }
 
- array_sequence([3,1,2] , 0 , [] , 3)
+// array_sequence([3, 1, 2], 0, [], 3)
+ 
+
+// subseuence with sum k
+
+
+function subs_with_sum_k(arr, i, ds, size, k) {
+    if (i >= size) {
+        let sum =0
+        for (let j = 0; j < ds.length; j++) {
+            sum = sum + ds[j];
+        }
+        if (sum == k) console.log(ds);
+
+        return;
+    }
+
+    ds.push(arr[i]);
+    subs_with_sum_k(arr, i + 1, ds, size, k);
+    ds.pop();
+    subs_with_sum_k(arr, i + 1, ds, size, k);
+}
+
+//subs_with_sum_k([3,1,2] , 0 , [] ,3 ,12)
+
+
+// without for loop in base condition
+
+
+
+function subs_with_sum_k_1(arr, i, ds,c_sum, size, k) {
+    if (i >= size) {
+        let sum =0
+        for (let j = 0; j < ds.length; j++) {
+            sum = sum + ds[j];
+        }
+        if (sum == k) console.log(ds);
+
+        return;
+    }
+
+    ds.push(arr[i]);
+    c_sum = c_sum+arr[i]
+    subs_with_sum_k_1(arr, i + 1, ds,c_sum, size, k);
+    c_sum = c_sum-arr[i]
+    ds.pop();
+    subs_with_sum_k_1(arr, i + 1, ds,c_sum, size, k);
+}
+
+subs_with_sum_k_1([3, 1, 2], 0, [],0, 3, 5)
