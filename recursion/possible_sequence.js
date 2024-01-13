@@ -60,11 +60,8 @@ function subs_with_sum_k(arr, i, ds, size, k) {
 
 function subs_with_sum_k_1(arr, i, ds,c_sum, size, k) {
     if (i >= size) {
-        let sum =0
-        for (let j = 0; j < ds.length; j++) {
-            sum = sum + ds[j];
-        }
-        if (sum == k) console.log(ds);
+        
+        if (c_sum == k) console.log(ds);
 
         return;
     }
