@@ -67,9 +67,9 @@ function subs_with_sum_k_1(arr, i, ds,c_sum, size, k) {
     }
 
     ds.push(arr[i]);
-    c_sum = c_sum+arr[i]
-    subs_with_sum_k_1(arr, i + 1, ds,c_sum, size, k);
-    c_sum = c_sum-arr[i]
+    //c_sum = c_sum+arr[i]
+    subs_with_sum_k_1(arr, i + 1, ds,c_sum+arr[i], size, k);
+    //c_sum = c_sum-arr[i]
     ds.pop();
     subs_with_sum_k_1(arr, i + 1, ds,c_sum, size, k);
 }
