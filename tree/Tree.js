@@ -20,14 +20,14 @@ function Tree() {
     root.left = new Node(5);
     root.right = new Node(15);
     
-    root.left.left = new Node(25);
+    //root.left.left = new Node(25);
     root.left.right = new Node(35);
     
     root.right.left = new Node(45);
     root.right.right = new Node(55);
     
-    root.left.left.left = new Node(100);
-    
+   // root.left.left.left = new Node(100);
+   root.right.right.right = new Node(69);
     return root
     
 }
